@@ -1,0 +1,167 @@
+/* 🟪 ---------GLOBAL STYLING---------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+:root {
+  /*----brand colours----*/
+  --brand: #479bea;
+  --background: #0d1116;
+  /*----buttons----*/
+  --primary-button-default: #479bea;
+  --primary-button-hover: #1b6ab4;
+  --secondary-button-default: #24272b;
+  --secondary-button-hover: #4a4f55;
+  --tertiary-button-default-stroke: #88939f;
+  /*----input fields----*/
+  --inputfield-surface: #16181c;
+  --inputfield-outline: #303030;
+  --inputfield-hover-surfcae: #101215;
+  --inputfield-outline-focus: #72767b;
+  --inputfield-outline-data: #479bea;
+  /*----text colours----*/
+  --primary-text: #fbfbfb;
+  --secondary-text: #88939f;
+  --placeholder-text: #88939f;
+  /*----icon colours----*/
+  --icons-strong: #fbfbfb;
+  --icons-subdued: #88939f;
+  /*----dividers----*/
+  --dividers: #72767b;
+}
+
+/* 🟪 ---------FONT STYLING---------*/
+
+.inter-fontfamily {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 50px;
+  color: var(--primary-text);
+  font-weight: 600px;
+}
+
+h2 {
+  font-size: 25px;
+  color: var(--primary-text);
+  font-weight: 500px;
+}
+
+h3 {
+  font-size: 25px;
+  color: var(--primary-text);
+  font-weight: 400px;
+}
+
+/* 🟪 ---------BUTTON STYLING---------*/
+
+.button-primary {
+  padding: 8px 26px;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600px;
+  background-color: var(--primary-button-default);
+  width: 100%;
+  transition: all 0.45s ease-in-out;
+}
+
+.button-primary:hover {
+  color: var(--primary-button-hover);
+}
+
+.button-primary:active {
+  transform: scale(0.9);
+}
+
+.button-secondary {
+  padding: 8px 26px;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600px;
+  background-color: var(--secondary-button-default);
+  width: 100%;
+  transition: all 0.45s ease-in-out;
+}
+
+.button-secondary:hover {
+  color: var(--secondary-button-hover);
+}
+
+.button-secondary:active {
+  transform: scale(0.9);
+}
+
+.button-tertiary {
+  width: 45px;
+  height: 45px;
+  background-color: none;
+  border: 1.5px solid var(--tertiary-button-default-stroke);
+  transition: all 0.45s ease-in-out;
+}
+
+.button-tertiary:hover {
+  background-color: var(--tertiary-button-default-stroke);
+}
+
+/* 🟪 ---------INPUT STYLING---------*/
+
+input {
+  background-color: var(--inputfield-surface);
+  border: 1.5px solid var(--inputfield-outline);
+  height: 60px;
+  padding: 0px 32px;
+  transition: all 0.25s ease-in-out;
+  color: var(--primary-text);
+}
+
+input:hover {
+  background-color: var(--inputfield-hover-surfcae);
+}
+
+input:focus {
+  border-color: var(--inputfield-outline-focus);
+}
+
+input:not(:placeholder-shown) {
+  border: 1.5px solid var(--inputfield-outline-data);
+}
+
+::placeholder {
+  color: var(--placeholder-text);
+}
+
+/* 🟪 ---------STRUCTURAL STYLING---------*/
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+}
+
+form {
+  display: flex;
+}
+
+/* 🟪 ---------MODAL STYLING---------*/
+
+/* 🟪 ---------SELECTION CARD/BUTTON STYLING---------*/
+
+/* 🟪 ---------NAVBAR STYLING---------*/
+
+/* 🟪 ---------RESPONSIVE STYLING---------*/
+
+/* 🟪 ---------FINAL SCREEN STYLING---------*/
