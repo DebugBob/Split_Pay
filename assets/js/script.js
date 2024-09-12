@@ -1,4 +1,3 @@
-
 document.querySelector('#add-value').addEventListener('click', function() {
     const itemName = document.querySelector('#item-name').value;
     const itemPrice = document.querySelector('#item-price').value;
@@ -46,6 +45,7 @@ function displayItems() {
   itemList.innerHTML = '';
 
   const items = JSON.parse(localStorage.getItem('items')) || [];
+  console.log(items);
 
   // Create item-cards for each item
   items.forEach((item, index) => {

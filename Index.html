@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Split Payment</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
@@ -13,7 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <script defer src="./assets/js/script.js" type="text/javascript"></script>
   </head>
 
   <!----NAVBAR---->
@@ -97,6 +97,7 @@
             />
             <input
               type="text"
+              id="item-name"
               class="input-field-text"
               required
               placeholder="Item Name"
@@ -109,18 +110,21 @@
               alt="dollar"
             />
             <input
-              type="text"
+              type="number"
+              id="item-price"
               class="input-field-text"
               required
               placeholder="Enter Total"
             />
           </div>
-          <button type="button" class="button-secondary">Add Value</button>
+          <button type="button" id="add-value" class="button-secondary">Add Value</button>
           <div class="divider"></div>
         </form>
       </div>
     </section>
-
+    
+    <!--LIST OF ITEMS:PRICE-->
+    <section id="item-list"></section>
     <!----FORM ELEMENT-02---->
 
     <section>
