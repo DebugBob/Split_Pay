@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Split Payment</title>
+    <script defer src="./assets/js/script.js" type="text/javascript"></script>
   </head>
   <body>
     <header>
@@ -27,22 +28,24 @@
       <form class="input-form">
         <div>
           <img class="input-icon" src="./assets/icon/mood-happy.png" alt="Face" />
-          <input type="text" class="input-field-text" required placeholder="Item Name" />
+          <input type="text" id="item-name" class="input-field-text" required placeholder="Item Name" />
         </div>
         <div>
           <img class="input-icon" src="./assets/icon/currency-dollar.png" alt="dollar" />
           <input
             type="number"
+            id="item-price"
             class="input-field-text"
             required
             placeholder="Enter Total"
           />
         </div>
         <div>
-          <button type="button" class="input-button">Add Value</button>
+          <button type="button" id="add-value" class="input-button">Add Value</button>
         </div>
       </form>
     </section>
+    <section id="item-list"></section>
     <section>
       <form class="input-form">
       <div>

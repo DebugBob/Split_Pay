@@ -1,28 +1,85 @@
 
-//Variable for the Modal popup
-//One each for the popup itself, one for the button, one for the close button.
-var modal = document.getElementById("NAME OF MODAL ID");
-var accept = document.getElementById("NAME OF BUTTON ELEMENT");
-var cross = document.getElementById("NAME OF CLOSE BUTTON ELEMENT");
-//If it needs to be getElementsByClassName()[0] < Remember the array.
+document.querySelector('#add-value').addEventListener('click', function() {
+    const itemName = document.querySelector('#item-name').value;
+    const itemPrice = document.querySelector('#item-price').value;
 
+    if (itemName && itemPrice) {
+      // Create a new item object
+      const item = {
+        name: itemName,
+        price: parseFloat(itemPrice)
+      };
 
-//When the confirm button is clicked display modal popup as block type.
-accept.onclick = function()
-{
-    modal.style.display = "block";
-}
+      // Retrieve existing items from localStorage
+      let items = JSON.parse(localStorage.getItem('items')) || [];
 
-//When the close button is clicked, make it empty to remove it.
-cross.onclick = function()
-{
-    modal.style.display = "none";
-}
+      // Add new item to the list
+      items.push(item);
+      console.log(items);
 
-//If you click outside of the popup, make it empty to remove it.
-window.onclick = function(event)
-{
-    if (event.target == modal){
-        modal.style.display = "none";
+      // Save updated list to localStorage
+      localStorage.setItem('items', JSON.stringify(items));
+
+      // Clear input fields
+      document.querySelector('#item-name').value = '';
+      document.querySelector('#item-price').value = '';
+
+      // Update the item list UI
+      displayItems();
+    } else {
+      // Create <p> element to display the error message
+      const error = document.createElement('p');
+      error.id = 'error-message';
+      error.textContent = 'Error! Please Try Again.';
+
+      // Insert the error message below the button
+      document.querySelector('#add-value').insertAdjacentElement('afterend', error);
+      setTimeout(function () {
+        error.textContent = '';
+      }, 4000);
     }
+});
+
+// Display items as item-cards
+function displayItems() {
+  const itemList = document.querySelector('#item-list');
+  itemList.innerHTML = '';
+
+  const items = JSON.parse(localStorage.getItem('items')) || [];
+
+  // Create item-cards for each item
+  items.forEach((item, index) => {
+      const itemCard = document.createElement('div');
+      itemCard.className = 'item-card';
+      
+      // Create item name and price element
+      const itemInfo = document.createElement('p');
+      itemInfo.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
+      
+      // Create delete button
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'X';
+      deleteButton.addEventListener('click', function() {
+          deleteItem(index); // Delete the item when the button is clicked
+      });
+      
+      // Append item info and delete button to itemCard
+      itemCard.appendChild(itemInfo);
+      itemCard.appendChild(deleteButton);
+      
+      // Append itemCard to the itemList
+      itemList.appendChild(itemCard);
+  });
 }
+
+function deleteItem(index) {
+  let items = JSON.parse(localStorage.getItem('items')) || [];
+
+  //removes the item at the index and updates localStorage and updates screen
+  items.splice(index, 1);
+  localStorage.setItem('items', JSON.stringify(items));
+  displayItems();
+}
+
+  // Display items on page load
+  displayItems();
