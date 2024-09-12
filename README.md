@@ -79,7 +79,19 @@ Your presentation should follow the Project Presentation TemplateLinks to an ext
 Collaboration 10%
 There are no major disparities in the number of GitHub contributions between group members.
 
-TODO: 
-Workflow
-Images
-Collaborators
+Wireflow:
+(./assets/images/wire-flow.png)
+
+WebPage Images:
+(./assets/images/pageimage1.PNG)
+(./assets/images/pageimage2.PNG)
+(./assets/images/pageimage3.PNG)
+(./assets/images/pageimage4.PNG)
+
+Collaborators:
+- Astorino, Robert
+- Said, Mohamed
+- Zhu, Pingbo
+- Evans, Shareef
+
+TODO: Link to deployed site.
