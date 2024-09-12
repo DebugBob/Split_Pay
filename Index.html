@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Split Payment</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img id="receipt-icon" src="./assets/icon/receipt.png" alt="Receipt" />
+        <h2>Split Payment</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="www.google.com.au">Split Payment</a></li>
+          <li><a class="nav-link" href="www.google.com.au">Track Spending</a></li>
+          <li><a class="nav-link" href="www.google.com.au">Saving Goals</a></li>
+          <li><a class="nav-link" href="www.google.com.au">Github</a></li>
+          <li><img id="dots-icon" src="./assets/icon/dots.png" alt="More" /></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Split Payment</h1>
+    <section>
+      <form class="input-form">
+        <div>
+          <img class="input-icon" src="./assets/icon/mood-happy.png" alt="Face" />
+          <input type="text" class="input-field-text" required placeholder="Item Name" />
+        </div>
+        <div>
+          <img class="input-icon" src="./assets/icon/currency-dollar.png" alt="dollar" />
+          <input
+            type="number"
+            class="input-field-text"
+            required
+            placeholder="Enter Total"
+          />
+        </div>
+        <div>
+          <button type="button" class="input-button">Add Value</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <form class="input-form">
+      <div>
+        <img class="input-icon" src="./assets/icon/users.png" alt="users" />
+        <input
+          type="text"
+          class="input-field-text"
+          required
+          placeholder="Add Person"
+        />
+      </div>
+      </form>
+      <div>
+        <button type="button" class="input-button">Add Person</button>
+      </div>
+    </section>
+    <section>
+      <button type="button" id="calculate-button">Calculate</button>
+    </section>
+  </body>
+</html>
