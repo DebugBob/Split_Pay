@@ -5,62 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Split Payment</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
+  <!----NAVBAR---->
+
   <body>
     <header>
-      <div>
-        <img id="receipt-icon" src="./assets/icon/receipt.png" alt="Receipt" />
-        <h2>Split Payment</h2>
-      </div>
-      <nav>
-        <ul>
-          <li><a class="nav-link" href="www.google.com.au">Split Payment</a></li>
-          <li><a class="nav-link" href="www.google.com.au">Track Spending</a></li>
-          <li><a class="nav-link" href="www.google.com.au">Saving Goals</a></li>
-          <li><a class="nav-link" href="www.google.com.au">Github</a></li>
-          <li><img id="dots-icon" src="./assets/icon/dots.png" alt="More" /></li>
-        </ul>
+      <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <div class="horizontal-layout-01">
+            <img class="logo" src="./assets/icon/receipt.png" />
+            <a class="navbar-brand decorative-text" href="#">SplitPay</a>
+          </div>
+          <div class="horizontal-layout-01">
+          <button
+            class="navbar-toggler button-tertiary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          </div>
+
+          <!----SIDE-MENU---->
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <img class="logo" src="./assets/icon/receipt.png" />
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Quick Links</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🥳 Moe Said</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🤪 Robert Astorino</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">😎 Pingbo Zhu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🧐 Shareef Evans</a>
+                </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
-    <h1>Split Payment</h1>
+
+    <!----FORM ELEMENT-01---->
+
     <section>
-      <form class="input-form">
-        <div>
-          <img class="input-icon" src="./assets/icon/mood-happy.png" alt="Face" />
-          <input type="text" class="input-field-text" required placeholder="Item Name" />
-        </div>
-        <div>
-          <img class="input-icon" src="./assets/icon/currency-dollar.png" alt="dollar" />
-          <input
-            type="number"
-            class="input-field-text"
-            required
-            placeholder="Enter Total"
-          />
-        </div>
-        <div>
-          <button type="button" class="input-button">Add Value</button>
-        </div>
-      </form>
-    </section>
-    <section>
-      <form class="input-form">
-      <div>
-        <img class="input-icon" src="./assets/icon/users.png" alt="users" />
-        <input
-          type="text"
-          class="input-field-text"
-          required
-          placeholder="Add Person"
-        />
+      <div class="container-main">
+        <h1>Split Payment</h1>
+        <form class="input-form">
+          <div class="input-styling">
+            <img
+              class="input-icon"
+              src="./assets/icon/mood-happy.png"
+              alt="Face"
+            />
+            <input
+              type="text"
+              class="input-field-text"
+              required
+              placeholder="Item Name"
+            />
+          </div>
+          <div class="input-styling">
+            <img
+              class="input-icon"
+              src="./assets/icon/currency-dollar.png"
+              alt="dollar"
+            />
+            <input
+              type="text"
+              class="input-field-text"
+              required
+              placeholder="Enter Total"
+            />
+          </div>
+          <button type="button" class="button-secondary">Add Value</button>
+          <div class="divider"></div>
+        </form>
       </div>
-      </form>
-      <div>
-        <button type="button" class="input-button">Add Person</button>
+    </section>
+
+    <!----FORM ELEMENT-02---->
+
+    <section>
+      <div class="container-main">
+        <form class="input-form">
+          <div class="input-styling">
+            <img class="input-icon" src="./assets/icon/users.png" alt="users" />
+            <input
+              type="text"
+              class="input-field-text"
+              required
+              placeholder="Add Person"
+            />
+          </div>
+          <button type="button" class="button-secondary">Add Person</button>
+        </form>
+        <div class="vertical-layout-01">
+          <div class="divider"></div>
+          <button type="button" id="calculate-button" class="button-primary">
+            Calculate Totals
+          </button>
+        </div>
       </div>
     </section>
-    <section>
-      <button type="button" id="calculate-button">Calculate</button>
-    </section>
+
+    <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>
