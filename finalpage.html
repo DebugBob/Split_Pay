@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Split Payment</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img id="receipt-icon" src="./assets/icon/receipt.png" alt="Receipt" />
+        <h2>Split Payment</h2>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a class="nav-link" href="www.google.com.au">Split Payment</a>
+          </li>
+          <li>
+            <a class="nav-link" href="www.google.com.au">Track Spending</a>
+          </li>
+          <li><a class="nav-link" href="www.google.com.au">Saving Goals</a></li>
+          <li><a class="nav-link" href="www.google.com.au">Github</a></li>
+          <li>
+            <img id="dots-icon" src="./assets/icon/dots.png" alt="More" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- First section with the two buttons -->
+    <div>
+      <button type="button" id="back-button">Back</button>
+      <h1 id="final-page-heading">Split Payment</h1>
+      <button type="button" id="share-button">Share</button>
+    </div>
+
+    <div>
+      <table class="table table-dark">
+        <!-- The table head shows the main result -->
+        <thead id="table-head-main-result">
+          <tr>
+            <th scope="col">Split Payment</th>
+            <th scope="col">$0.00</th>
+          </tr>
+        </thead>
+        <!-- The first tbody lists the items and their prices -->
+        <tbody id="first-tb">
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <th>Item:</th>
+            <th>Price</th>
+          </tr>
+        </tbody>
+        <!-- the second tbody shows the names and the owing -->
+        <tbody id="second-tb">
+          <tr>
+            <th>Name:</th>
+            <th>Owing:</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- The Re-calculate button -->
+    <div>
+      <button type="button" id="recalculate-button">
+        Re-calculate with 10% Tip
+      </button>
+    </div>
+
+    <!-- The Bills Are Paid button -->
+    <div>
+      <button type="button" id="paid-button">Bills Are Paid</button>
+    </div>
+  </body>
+</html>
