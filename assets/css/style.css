@@ -254,6 +254,24 @@ form {
 
 /* 🟪 ---------RESPONSIVE STYLING (media queries)---------*/
 
+@media only screen and (max-width: 720px) {
+  .container-main {
+    width: 90%;
+  }
+  .input-styling,
+  .button-primary,
+  .button-secondary,
+  .divider {
+    width: 100%;
+  }
+  .navbar {
+    padding: 24px 16px;
+  }
+  .container-main {
+    margin-top: 32px;
+  }
+}
+
 /* 🟪 ---------FINAL SCREEN STYLING---------*/
 
 /* 🟪 ---------MODAL STYLING---------*/
