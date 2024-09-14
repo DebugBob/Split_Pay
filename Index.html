@@ -134,15 +134,17 @@
             <img class="input-icon" src="./assets/icon/users.png" alt="users" />
             <input
               type="text"
+              id="person-name"
               class="input-field-text"
               required
               placeholder="Add Person"
             />
           </div>
-          <button type="button" class="button-secondary">Add Person</button>
+          <button type="button" id="add-person" class="button-secondary">Add Person</button>
         </form>
         <div class="vertical-layout-01">
           <div class="divider"></div>
+          <section id="person-list"></section>
           <button type="button" id="calculate-button" class="button-primary">
             Calculate Totals
           </button>
