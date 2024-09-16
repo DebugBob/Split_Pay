@@ -90,41 +90,32 @@
           <button type="button" id="share-button" class="button-primary wrap-button">Share</button>
         </div>
         <div class="divider"></div>
+        <div class="horizontal-layout-01 horizontal-layout-02 horizontal-layout-03">
+          <h3>Total:</h3>
+          <p id='total-sum' class="white-text">$0.00</p>
+        </div>
+        <div class="divider"></div>
 
+        <!-- receipt table -->
         <div class="table-container">
-          <table class="table table-dark">
-
-        <!-- The table head shows the main result -->
-
-            <thead id="table-head-main-result">
-              <tr>
-                <th scope="col">Split Payment</th>
-                <th scope="col">$0.00</th>
-              </tr>
-            </thead>
-
+          <table class='table table-dark'>
         <!-- The first tbody lists the items and their prices -->
-
             <tbody id="first-tb">
-              <tr>
-
+              <tr id="item-info">
             <!-- <th scope="row">1</th> -->
-
                 <th>Item:</th>
-                <th>Price</th>
+                <th>Price:</th>
               </tr>
             </tbody>
-
         <!-- the second tbody shows the names and the owing -->
-
             <tbody id="second-tb">
-              <tr>
+              <tr id="name-info">
                 <th>Name:</th>
                 <th>Owing:</th>
             </tr>
             </tbody>
           </table>
-      </div>
+        </div>
 
     <!-- buttons -->
         <div class="divider"></div>

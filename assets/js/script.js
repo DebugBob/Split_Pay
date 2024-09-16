@@ -1,3 +1,4 @@
+// Clicking addValue creates an item card, stores it and calls disPLayItems
 document.querySelector('#add-value').addEventListener('click', function () {
   const itemName = document.querySelector('#item-name').value;
   const itemPrice = document.querySelector('#item-price').value;
@@ -14,7 +15,6 @@ document.querySelector('#add-value').addEventListener('click', function () {
 
     // Add new item to the list
     items.push(item);
-    console.log(items);
 
     // Save updated list to localStorage
     localStorage.setItem('items', JSON.stringify(items));
@@ -28,7 +28,7 @@ document.querySelector('#add-value').addEventListener('click', function () {
   } else {
     // Create <p> element to display the error message
     const error = document.createElement('p');
-    error.id = 'error-message';
+    error.className = 'error-message';
     error.textContent = 'Error! Please Try Again.';
 
     // Insert the error message below the button
@@ -47,12 +47,11 @@ function displayItems() {
   itemList.innerHTML = '';
 
   const items = JSON.parse(localStorage.getItem('items')) || [];
-  console.log(items);
 
   // Create item-cards for each item
   items.forEach((item, index) => {
     const itemCard = document.createElement('div');
-    itemCard.className = 'item-card';
+    itemCard.className = 'button-card';
 
     // Create item name and price element
     const itemInfo = document.createElement('p');
@@ -75,6 +74,7 @@ function displayItems() {
   });
 }
 
+//Deletes the item: price card from localStorage
 function deleteItem(index) {
   let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -84,5 +84,89 @@ function deleteItem(index) {
   displayItems();
 }
 
+// Clicking addPerson creates a name card, stores it and calls displayPersons
+document.querySelector('#add-person').addEventListener('click', function () {
+  const personName = document.querySelector('#person-name').value;
+
+  if (personName) {
+    // Create a new item object
+    const person = personName;
+
+    // Retrieve existing items from localStorage
+    let people = JSON.parse(localStorage.getItem('people')) || [];
+
+    // Add new person to the list
+    people.push(person);
+
+    // Save updated list to localStorage
+    localStorage.setItem('people', JSON.stringify(people));
+
+    // Clear input field
+    document.querySelector('#person-name').value = '';
+
+    // Update the name list UI
+    displayPersons();
+  } else {
+    // Create <p> element to display the error message
+    const error = document.createElement('p');
+    error.className = 'error-message';
+    error.textContent = 'Error! Please Try Again.';
+
+    // Insert the error message below the button
+    document
+      .querySelector('#add-person')
+      .insertAdjacentElement('afterend', error);
+    setTimeout(function () {
+      error.textContent = '';
+    }, 4000);
+  }
+});
+
+// Display names as name-cards
+function displayPersons() {
+  const personList = document.querySelector('#person-list');
+  personList.innerHTML = '';
+
+  const people = JSON.parse(localStorage.getItem('people')) || [];
+
+  // Create name-cards for each item
+  for (let i = 0; i < people.length; i++) {
+    const nameCard = document.createElement('div');
+    nameCard.className = 'button-card';
+    let name = people[i];
+
+    // Create person name element
+    const nameP = document.createElement('p');
+    nameP.innerHTML = `${name}`;
+
+    // Create delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'delete';
+    deleteButton.textContent = 'X';
+    deleteButton.addEventListener('click', function () {
+      deletePerson(i); // Delete the name when the button is clicked
+    });
+
+    // Append name and delete button to nameCard
+    nameCard.appendChild(nameP);
+    nameCard.appendChild(deleteButton);
+
+    // Append nameCard to the itemList
+    personList.appendChild(nameCard);
+  }
+}
+
+//Deletes the item: price card from localStorage
+function deletePerson(index) {
+  let people = JSON.parse(localStorage.getItem('people')) || [];
+
+  //removes the item at the index and updates localStorage and updates screen
+  people.splice(index, 1);
+  localStorage.setItem('people', JSON.stringify(people));
+  displayPersons();
+}
+
 // Display items on page load
 displayItems();
+// DIsplay names on load
+displayPersons();

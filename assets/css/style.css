@@ -73,6 +73,15 @@ h3 {
   font-weight: 600;
 }
 
+.white-text {
+  color: var(--primary-text);
+}
+
+.error-message {
+  font-weight: 700;
+  color: #f83665;
+}
+
 /* 🟪 ---------IMAGE STYLING---------*/
 
 .logo {
@@ -231,6 +240,11 @@ form {
   margin-bottom: 42px;
 }
 
+.horizontal-layout-03 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
 .vertical-layout-01 {
   width: 100%;
   display: flex;
@@ -259,7 +273,7 @@ form {
   width: 80%;
 }
 
-.item-card {
+.button-card {
   background-color: var(--inputfield-surface);
   display: flex;
   flex-direction: row;
@@ -275,7 +289,7 @@ form {
   text-align: center;
 }
 
-.item-card > p {
+.button-card > p {
   margin-top: 16px;
 }
 
@@ -289,7 +303,7 @@ form {
   width: 24px;
 }
 
-#people-list {
+#person-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -335,12 +349,45 @@ form {
   .container-main {
     margin-top: 32px;
   }
+  .horizontal-layout-02 {
+    width: 100%;
+  }
+  .table-container {
+    width: 100% !important;
+  }
 }
 
 /* 🟪 ---------TABLE STYLING---------*/
 
+table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .table-container {
+  margin-top: 16px;
   width: 80%;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tr-spacing {
+  margin-top: 16px;
+}
+
+th {
+  border: none;
+  border-radius: 8px;
+}
+
+.th-bg {
+  background-color: var(--background) !important;
+  font-weight: 400;
 }
 
 /* 🟪 ---------MODAL STYLING---------*/
