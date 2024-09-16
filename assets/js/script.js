@@ -1,43 +1,44 @@
 // Clicking addValue creates an item card, stores it and calls disPLayItems
-document.querySelector('#add-value').addEventListener('click', function() {
-    const itemName = document.querySelector('#item-name').value;
-    const itemPrice = document.querySelector('#item-price').value;
+document.querySelector('#add-value').addEventListener('click', function () {
+  const itemName = document.querySelector('#item-name').value;
+  const itemPrice = document.querySelector('#item-price').value;
 
-    if (itemName && itemPrice) {
-      // Create a new item object
-      const item = {
-        name: itemName,
-        price: parseFloat(itemPrice)
-      };
+  if (itemName && itemPrice) {
+    // Create a new item object
+    const item = {
+      name: itemName,
+      price: parseFloat(itemPrice),
+    };
 
-      // Retrieve existing items from localStorage
-      let items = JSON.parse(localStorage.getItem('items')) || [];
+    // Retrieve existing items from localStorage
+    let items = JSON.parse(localStorage.getItem('items')) || [];
 
-      // Add new item to the list
-      items.push(item);
-      
+    // Add new item to the list
+    items.push(item);
 
-      // Save updated list to localStorage
-      localStorage.setItem('items', JSON.stringify(items));
+    // Save updated list to localStorage
+    localStorage.setItem('items', JSON.stringify(items));
 
-      // Clear input fields
-      document.querySelector('#item-name').value = '';
-      document.querySelector('#item-price').value = '';
+    // Clear input fields
+    document.querySelector('#item-name').value = '';
+    document.querySelector('#item-price').value = '';
 
-      // Update the item list UI
-      displayItems();
-    } else {
-      // Create <p> element to display the error message
-      const error = document.createElement('p');
-      error.className = 'error-message';
-      error.textContent = 'Error! Please Try Again.';
+    // Update the item list UI
+    displayItems();
+  } else {
+    // Create <p> element to display the error message
+    const error = document.createElement('p');
+    error.className = 'error-message';
+    error.textContent = 'Error! Please Try Again.';
 
-      // Insert the error message below the button
-      document.querySelector('#add-value').insertAdjacentElement('afterend', error);
-      setTimeout(function () {
-        error.textContent = '';
-      }, 4000);
-    }
+    // Insert the error message below the button
+    document
+      .querySelector('#add-value')
+      .insertAdjacentElement('afterend', error);
+    setTimeout(function () {
+      error.textContent = '';
+    }, 4000);
+  }
 });
 
 // Display items as item-cards
@@ -46,29 +47,30 @@ function displayItems() {
   itemList.innerHTML = '';
 
   const items = JSON.parse(localStorage.getItem('items')) || [];
-  
+
   // Create item-cards for each item
   items.forEach((item, index) => {
-      const itemCard = document.createElement('div');
-      itemCard.className = 'button-card';
-      
-      // Create item name and price element
-      const itemInfo = document.createElement('p');
-      itemInfo.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
-      
-      // Create delete button
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = 'X';
-      deleteButton.addEventListener('click', function() {
-          deleteItem(index); // Delete the item when the button is clicked
-      });
-      
-      // Append item info and delete button to itemCard
-      itemCard.appendChild(itemInfo);
-      itemCard.appendChild(deleteButton);
-      
-      // Append itemCard to the itemList
-      itemList.appendChild(itemCard);
+    const itemCard = document.createElement('div');
+    itemCard.className = 'button-card';
+
+    // Create item name and price element
+    const itemInfo = document.createElement('p');
+    itemInfo.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
+
+    // Create delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'delete';
+    deleteButton.textContent = 'X';
+    deleteButton.addEventListener('click', function () {
+      deleteItem(index); // Delete the item when the button is clicked
+    });
+
+    // Append item info and delete button to itemCard
+    itemCard.appendChild(itemInfo);
+    itemCard.appendChild(deleteButton);
+
+    // Append itemCard to the itemList
+    itemList.appendChild(itemCard);
   });
 }
 
@@ -83,9 +85,9 @@ function deleteItem(index) {
 }
 
 // Clicking addPerson creates a name card, stores it and calls displayPersons
-document.querySelector('#add-person').addEventListener('click', function() {
+document.querySelector('#add-person').addEventListener('click', function () {
   const personName = document.querySelector('#person-name').value;
-  
+
   if (personName) {
     // Create a new item object
     const person = personName;
@@ -107,11 +109,13 @@ document.querySelector('#add-person').addEventListener('click', function() {
   } else {
     // Create <p> element to display the error message
     const error = document.createElement('p');
-    error.className= 'error-message';
+    error.className = 'error-message';
     error.textContent = 'Error! Please Try Again.';
 
     // Insert the error message below the button
-    document.querySelector('#add-person').insertAdjacentElement('afterend', error);
+    document
+      .querySelector('#add-person')
+      .insertAdjacentElement('afterend', error);
     setTimeout(function () {
       error.textContent = '';
     }, 4000);
@@ -134,21 +138,22 @@ function displayPersons() {
     // Create person name element
     const nameP = document.createElement('p');
     nameP.innerHTML = `${name}`;
-    
+
     // Create delete button
     const deleteButton = document.createElement('button');
+    deleteButton.className = 'delete';
     deleteButton.textContent = 'X';
-    deleteButton.addEventListener('click', function() {
-        deletePerson(i); // Delete the name when the button is clicked
+    deleteButton.addEventListener('click', function () {
+      deletePerson(i); // Delete the name when the button is clicked
     });
-    
+
     // Append name and delete button to nameCard
     nameCard.appendChild(nameP);
     nameCard.appendChild(deleteButton);
-    
+
     // Append nameCard to the itemList
     personList.appendChild(nameCard);
-}
+  }
 }
 
 //Deletes the item: price card from localStorage

@@ -3,76 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Split Payment</title>
   </head>
   <body>
+    
+    <!----NAVBAR---->
     <header>
-      <div>
-        <img id="receipt-icon" src="./assets/icon/receipt.png" alt="Receipt" />
-        <h2>Split Payment</h2>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a class="nav-link" href="www.google.com.au">Split Payment</a>
-          </li>
-          <li>
-            <a class="nav-link" href="www.google.com.au">Track Spending</a>
-          </li>
-          <li><a class="nav-link" href="www.google.com.au">Saving Goals</a></li>
-          <li><a class="nav-link" href="www.google.com.au">Github</a></li>
-          <li>
-            <img id="dots-icon" src="./assets/icon/dots.png" alt="More" />
-          </li>
-        </ul>
+      <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <div class="horizontal-layout-01">
+            <img class="logo" src="./assets/icon/receipt.png" />
+            <a class="navbar-brand decorative-text" href="#">SplitPay</a>
+          </div>
+          <div class="horizontal-layout-01">
+          <button
+            class="navbar-toggler button-tertiary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          </div>
+
+          <!----SIDE-MENU---->
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <img class="logo" src="./assets/icon/receipt.png" />
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Quick Links</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🥳 Moe Said</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🤪 Robert Astorino</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">😎 Pingbo Zhu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">🧐 Shareef Evans</a>
+                </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 
     <!-- First section with the two buttons -->
-    <div>
-      <button type="button" id="back-button">Back</button>
-      <h1 id="final-page-heading">Split Payment</h1>
-      <button type="button" id="share-button">Share</button>
-    </div>
+    <section>
+      <div class="container-main">
+        <div class="horizontal-layout-01 horizontal-layout-02">
+          <button type="button" id="back-button" class="button-secondary wrap-button">Back</button>
+          <h1 id="final-page-heading">Split Payment</h1>
+          <button type="button" id="share-button" class="button-primary wrap-button">Share</button>
+        </div>
+        <div class="divider"></div>
+        <div class="horizontal-layout-01 horizontal-layout-02 horizontal-layout-03">
+          <h3>Total:</h3>
+          <p id='total-sum' class="white-text">$0.00</p>
+        </div>
+        <div class="divider"></div>
 
-    <div>
-      <table class="table table-dark">
-        <!-- The table head shows the main result -->
-        <thead id="table-head-main-result">
-          <tr>
-            <th scope="col">Split Payment</th>
-            <th scope="col">$0.00</th>
-          </tr>
-        </thead>
+        <!-- receipt table -->
+        <div class="table-container">
+          <table class='table table-dark'>
         <!-- The first tbody lists the items and their prices -->
-        <tbody id="first-tb">
-          <tr>
+            <tbody id="first-tb">
+              <tr id="item-info">
             <!-- <th scope="row">1</th> -->
-            <th>Item:</th>
-            <th>Price</th>
-          </tr>
-        </tbody>
+                <th>Item:</th>
+                <th>Price:</th>
+              </tr>
+            </tbody>
         <!-- the second tbody shows the names and the owing -->
-        <tbody id="second-tb">
-          <tr>
-            <th>Name:</th>
-            <th>Owing:</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            <tbody id="second-tb">
+              <tr id="name-info">
+                <th>Name:</th>
+                <th>Owing:</th>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <!-- The Re-calculate button -->
-    <div>
-      <button type="button" id="recalculate-button">
-        Re-calculate with 10% Tip
-      </button>
-    </div>
-
-    <!-- The Bills Are Paid button -->
-    <div>
-      <button type="button" id="paid-button">Bills Are Paid</button>
-    </div>
+    <!-- buttons -->
+        <div class="divider"></div>
+        <div class="vertical-layout-01">
+          <button class='button-primary' type="button" id="recalculate-button">
+           Re-calculate with 10% Tip
+        </button>
+        <button class='button-secondary' type="button" id="paid-button">Bills Are Paid</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
