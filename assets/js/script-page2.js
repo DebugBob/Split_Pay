@@ -35,15 +35,18 @@ function renderEverything() {
       personsName.textContent = enteredPeople[x];
       personsName.className = 'th-bg';
 
-      const sum = Object.values(enteredItems).reduce(
-        (sum, price) => sum + price.price,
-        0
-      );
+      let sum = 0;
+      enteredItems.forEach((item, index) => {
+        sum = item.price + sum;
+      });
+
+      let pricePerPerson = sum / enteredPeople.length;
       const amountOwed = document.createElement('th');
-      amountOwed.textContent = sum / enteredPeople.length;
+      amountOwed.textContent = `$${Number(pricePerPerson.toFixed(2))}`;
       amountOwed.className = 'th-bg';
 
       renderPeople.appendChild(personsName);
+      renderPeople.appendChild(amountOwed);
       secondTable.appendChild(renderPeople);
     }
   }
