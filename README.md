@@ -41,7 +41,9 @@ Pingbo Zhu
 Shareef Evans
 
 ##License
-This project is not licensed.
+- This project is not licensed.
+- This project uses [Bootstrap](https://getbootstrap.com/), which is licensed under the [MIT License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
+
 
 ##Features
 Add unlimited items and participants to the bill.
