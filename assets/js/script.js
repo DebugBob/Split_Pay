@@ -54,8 +54,9 @@ function displayItems() {
     itemCard.className = "button-card";
 
     // Create item name and price element
-    const itemInfo = document.createElement("p");
-    itemInfo.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
+    const itemInfo = document.createElement('p');
+    itemInfo.innerHTML = `${item.name}: ${item.price.toFixed(2)}`;
+
 
     // Create delete button
     const deleteButton = document.createElement("button");
@@ -166,7 +167,24 @@ function deletePerson(index) {
   displayPersons();
 }
 
+function totalCalc(){
+  const items = localStorage.getItem('items');
+  const items_parsed = JSON.parse(items);
+  let total = 0;
+
+  items_parsed.forEach(items_parsed =>{
+    total += items_parsed.price;
+  })
+  console.log(items_parsed);
+  console.log(total);
+
+  localStorage.setItem("total", total);
+}
+document.getElementById(`calculate-button`).addEventListener("click", totalCalc);
+
+
 // Display items on page load
 displayItems();
 // DIsplay names on load
 displayPersons();
+
