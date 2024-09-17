@@ -66,6 +66,13 @@ function renderEverything() {
       secondTable.appendChild(renderPeople);
     }
   }
+  //Changes Total label to value stored in localStorage `total`
+  document.getElementById(`total-sum`).textContent = `$` + localStorage.getItem(`total`);
 }
+document.getElementById('recalculate-button').addEventListener('click', function (){
+  total_float = parseFloat(document.getElementById(`total-sum`).textContent.replace(`$`, ``));
+  total_float *= 1.10;
+  document.getElementById(`total-sum`).textContent = total_float;
+});
 
 document.addEventListener('DOMContentLoaded', renderEverything);
