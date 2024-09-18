@@ -57,7 +57,6 @@ function displayItems() {
     const itemInfo = document.createElement('p');
     itemInfo.innerHTML = `${item.name}: ${item.price.toFixed(2)}`;
 
-
     // Create delete button
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete";
@@ -167,6 +166,7 @@ function deletePerson(index) {
   displayPersons();
 }
 
+
 function totalCalc(){
   const items = localStorage.getItem('items');
   const items_parsed = JSON.parse(items);
@@ -179,9 +179,13 @@ function totalCalc(){
   console.log(total);
 
   localStorage.setItem("total", total);
+  document.getElementById(`modalTotalLabel`).textContent=total;
 }
 document.getElementById(`calculate-button`).addEventListener("click", totalCalc);
 
+document.getElementById('modalConfirm').addEventListener('click', function () {
+  window.location.href = 'finalpage.html';
+});
 
 // Display items on page load
 displayItems();

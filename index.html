@@ -147,12 +147,33 @@
           <!-- <section id="People-list"></section> -->
           <section id="person-list"></section>
           <div class="divider"></div>
-          <button type="button" id="calculate-button" class="button-primary">
+          <button type="button" id="calculate-button" class="button-primary" data-bs-toggle="modal" data-bs-target="#modalConfirm">
             Calculate Totals
           </button>
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modalConfirm" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">
+              Total Readout
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>Here is your Total:</p>
+            <label id="modalTotalLabel">TOTAL_GOES_HERE</label>
+          </div>
+          <div class="modal-footer">
+            <button id="modalConfirm" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>
