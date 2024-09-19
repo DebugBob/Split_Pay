@@ -1,6 +1,6 @@
 // Click on the "back" button to go back to the first page
 document.getElementById('back-button').addEventListener('click', function () {
-  window.location.href = 'Index.html';
+  window.location.href = 'index.html';
 });
 
 //Share button, saves url to clipboard
@@ -15,7 +15,7 @@ document.querySelector('#paid-button').addEventListener('click', function () {
   localStorage.setItem('people', JSON.stringify(null));
 
   //goes back to index.html
-  window.location.href = 'Index.html';
+  window.location.href = 'index.html';
 });
 
 // Render items from local storage on page 2
@@ -76,9 +76,9 @@ function renderEverything() {
   document.getElementById(`total-sum`).textContent = `$` + localStorage.getItem(`total`);
 }
 document.getElementById('recalculate-button').addEventListener('click', function (){
-  total_float = parseFloat(document.getElementById(`total-sum`).textContent.replace(`$`, ``));
+  let total_float = parseFloat(document.getElementById(`total-sum`).textContent.replace(`$`, ``));
   total_float *= 1.10;
-  document.getElementById(`total-sum`).textContent = total_float;
+  document.getElementById(`total-sum`).textContent = total_float.toFixed(2);
 });
 
 document.addEventListener('DOMContentLoaded', renderEverything);
